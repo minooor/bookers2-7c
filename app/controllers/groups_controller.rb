@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
     @book = Book.new
     @group = Group.find(params[:id])
   end
-  
+
   def join
     @group = Group.find(params[:group_id])
     @group.users << current_user
@@ -43,7 +43,7 @@ class GroupsController < ApplicationController
       render "edit"
     end
   end
-  
+
   def destroy
     @group = Group.find(params[:id])
     @group.users.delete(current_user)
